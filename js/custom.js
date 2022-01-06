@@ -85,28 +85,26 @@ $(document).ready(function(){
 		var tagid = $(this).data('tag');
 		$('.custom_tabs_horizontal_inner_steps .custom_tabs_content').removeClass('tab_content_active').hide();
 		$('#'+tagid).addClass('tab_content_active').show();
+		$(".custom_tabs_horizontal_inner_steps .custom_tabs_content.tab_content_active .custom_tabs_content_inner_steps").first().addClass("custom_tabs_content_inner_steps_active").show();
 	});
 	$('.custom_tabs_horizontal_inner_steps .next_step').click(function () {
 		var tagid_active = $(".custom_tabs_horizontal_inner_steps .custom_tabs_heading_btns li a.active_tab_horizontal_inner").parents(".custom_tabs_horizontal_inner_steps .custom_tabs_heading_btns li").next().children(".custom_tabs_horizontal_inner_steps .custom_tabs_heading_btns li a").data('tag');
 		$(".custom_tabs_horizontal_inner_steps .custom_tabs_heading_btns li a.active_tab_horizontal_inner").removeClass('active_tab_horizontal_inner').parents(".custom_tabs_horizontal_inner_steps .custom_tabs_heading_btns li").next().children(".custom_tabs_horizontal_inner_steps .custom_tabs_heading_btns li a").addClass('active_tab_horizontal_inner');
 		$('.custom_tabs_horizontal_inner_steps .custom_tabs_content').removeClass('tab_content_active').hide();
 		$('#'+tagid_active).addClass('tab_content_active').show();
-		console.log("tagid_active id Next -------------->", tagid_active);
+		$(".custom_tabs_horizontal_inner_steps .custom_tabs_content.tab_content_active .custom_tabs_content_inner_steps").first().addClass("custom_tabs_content_inner_steps_active").show();
 	});
 	$('.custom_tabs_horizontal_inner_steps .prev_step').click(function () {
 		var tagid_active = $(".custom_tabs_horizontal_inner_steps .custom_tabs_heading_btns li a.active_tab_horizontal_inner").parents(".custom_tabs_horizontal_inner_steps .custom_tabs_heading_btns li").prev().children(".custom_tabs_horizontal_inner_steps .custom_tabs_heading_btns li a").data('tag');
 		$(".custom_tabs_horizontal_inner_steps .custom_tabs_heading_btns li a.active_tab_horizontal_inner").removeClass('active_tab_horizontal_inner').parents(".custom_tabs_horizontal_inner_steps .custom_tabs_heading_btns li").prev().children(".custom_tabs_horizontal_inner_steps .custom_tabs_heading_btns li a").addClass('active_tab_horizontal_inner');
 		$('.custom_tabs_horizontal_inner_steps .custom_tabs_content').removeClass('tab_content_active').hide();
 		$('#'+tagid_active).addClass('tab_content_active').show();
-		console.log("tagid_active id Prev -------------->", tagid_active);
 	});
-	$(".custom_tabs_horizontal_inner_steps .custom_tabs_content .custom_tabs_content_inner").hide();
-	$(".custom_tabs_horizontal_inner_steps .custom_tabs_content .custom_tabs_content_inner_step_1").show();
+	$(".custom_tabs_horizontal_inner_steps .custom_tabs_content .custom_tabs_content_inner_steps").hide();
 	$('.custom_tabs_horizontal_inner_steps .next_step_inner').click(function () {
-		$(".custom_tabs_horizontal_inner_steps .custom_tabs_content .custom_tabs_content_inner_step_1").hide().parents(".custom_tabs_horizontal_inner_steps .custom_tabs_content.tab_content_active").children(".custom_tabs_content_inner_step_1").next().show();
+		$(this).parents(".custom_tabs_horizontal_inner_steps .custom_tabs_content.tab_content_active").children(".custom_tabs_content_inner_steps.custom_tabs_content_inner_steps_active").hide().next().addClass("custom_tabs_content_inner_steps_active").show().prev().removeClass("custom_tabs_content_inner_steps_active");
 	});
 	$('.custom_tabs_horizontal_inner_steps .prev_step_inner').click(function () {
-		$(".custom_tabs_horizontal_inner_steps .custom_tabs_content .custom_tabs_content_inner_step_2").hide().parents(".custom_tabs_horizontal_inner_steps .custom_tabs_content.tab_content_active").children(".custom_tabs_content_inner_step_2").prev().show();	
+		$(this).parents(".custom_tabs_horizontal_inner_steps .custom_tabs_content.tab_content_active").children(".custom_tabs_content_inner_steps.custom_tabs_content_inner_steps_active").hide().prev().addClass("custom_tabs_content_inner_steps_active").show().next().removeClass("custom_tabs_content_inner_steps_active");
 	});
-
 });
