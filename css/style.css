@@ -102,22 +102,22 @@ img{
 }
 /*accordion css end*/
 /*custom tabs start*/
-.custom_tabs_inner {
+.custom_tabs .custom_tabs_inner {
 	display: -ms-flexbox;
 	display: flex;
 	-ms-flex-wrap: wrap;
 	flex-wrap: wrap;
 }
-.custom_tabs_inner_heading {
+.custom_tabs .custom_tabs_inner_heading {
 	flex: 0 0 160px;
 	max-width: 160px;
 }
-.custom_tabs_inner_content {
+.custom_tabs .custom_tabs_inner_content {
 	flex: 0 0 calc(100% - 160px);
 	max-width: calc(100% - 160px);
 	padding-left: 10px;
 }
-.custom_tabs_heading_btns li a {
+.custom_tabs .custom_tabs_heading_btns li a {
 	background-color: #fff;
 	width: 100%;
 	display: block;
@@ -129,14 +129,14 @@ img{
 	font-weight: 600;
 	text-transform: capitalize;
 }
-.custom_tabs_heading_btns li:last-child a {
+.custom_tabs .custom_tabs_heading_btns li:last-child a {
 	margin-bottom: 0;
 }
-.custom_tabs_heading_btns li a.active_tab {
+.custom_tabs .custom_tabs_heading_btns li a.active_tab {
 	background-color: #333;
 	color: #fff;
 }
-.custom_tabs_inner_content .custom_tabs_content {
+.custom_tabs .custom_tabs_inner_content .custom_tabs_content {
 	padding: 10px;
 	border: 1px solid #333;
 }
@@ -157,7 +157,21 @@ img{
 	padding: 0 8px;
 }
 .custom_tabs_horizontal .custom_tabs_heading_btns li a {
-	margin-bottom: 15px !important;
+    margin-bottom: 15px !important;
+    background-color: #fff;
+    width: 100%;
+    display: block;
+    padding: 10px;
+    border: 1px solid #333;
+    color: #333;
+    margin-bottom: 5px;
+    transition: all 0.3s;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+.custom_tabs_horizontal .custom_tabs_heading_btns li a.active_tab_horizontal {
+    background-color: #333;
+    color: #fff;
 }
 .custom_tabs_horizontal_btn {
 	display: flex;
@@ -165,7 +179,11 @@ img{
 	justify-content: space-between;
 	padding-top: 10px;
 }
-.custom_tabs_horizontal_btn span {
+.custom_tabs_horizontal .custom_tabs_inner_content .custom_tabs_content {
+    padding: 10px;
+    border: 1px solid #333;
+}
+.custom_tabs_horizontal .custom_tabs_horizontal_btn span {
 	width: 100%;
 	max-width: 80px;
 	text-align: center;
@@ -175,10 +193,72 @@ img{
 	padding: 6px 15px;
 	cursor: pointer;
 }
-.custom_tabs_horizontal_btn .next_step {
+.custom_tabs_horizontal .custom_tabs_horizontal_btn .next_step_inner,
+.custom_tabs_horizontal .custom_tabs_horizontal_btn .next_step {
 	margin-left: auto;
 }
-.custom_tabs_horizontal_btn .next_prev {
+.custom_tabs_horizontal .custom_tabs_horizontal_btn .prev_step_inner,
+.custom_tabs_horizontal .custom_tabs_horizontal_btn .prev_step {
 	margin-right: auto;
 }
 /*custom tabs horizontal end*/
+/*custom tabs horizontal inner steps start*/
+.custom_tabs_horizontal_inner_steps .custom_tabs_inner_heading,.custom_tabs_horizontal_inner_steps .custom_tabs_inner_content {
+	flex: 0 0 100%;
+	max-width: 100%;
+	padding: 0;
+}
+.custom_tabs_horizontal_inner_steps .custom_tabs_heading_btns {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 -8px;
+}
+.custom_tabs_horizontal_inner_steps .custom_tabs_heading_btns li {
+	flex-grow: 1;
+	padding: 0 8px;
+}
+.custom_tabs_horizontal_inner_steps .custom_tabs_heading_btns li a {
+    margin-bottom: 15px !important;
+    background-color: #fff;
+    width: 100%;
+    display: block;
+    padding: 10px;
+    border: 1px solid #333;
+    color: #333;
+    margin-bottom: 5px;
+    transition: all 0.3s;
+    font-weight: 600;
+    text-transform: capitalize;
+    pointer-events: none;
+}
+.custom_tabs_horizontal_inner_steps .custom_tabs_heading_btns li a.active_tab_horizontal_inner {
+    background-color: #333;
+    color: #fff;
+}
+.custom_tabs_horizontal_btn {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding-top: 10px;
+}
+.custom_tabs_horizontal_inner_steps .custom_tabs_inner_content .custom_tabs_content {
+    padding: 10px;
+    border: 1px solid #333;
+}
+.custom_tabs_horizontal_inner_steps .custom_tabs_horizontal_btn span {
+	width: 100%;
+	max-width: 80px;
+	text-align: center;
+	display: block;
+	background-color: #333;
+	color: #fff;
+	padding: 6px 15px;
+	cursor: pointer;
+}
+.custom_tabs_horizontal_inner_steps .custom_tabs_horizontal_btn .next_step {
+	margin-left: auto;
+}
+.custom_tabs_horizontal_inner_steps .custom_tabs_horizontal_btn .next_prev {
+	margin-right: auto;
+}
+/*custom tabs horizontal inner steps end*/
