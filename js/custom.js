@@ -107,4 +107,34 @@ $(document).ready(function(){
 	$('.custom_tabs_horizontal_inner_steps .prev_step_inner').click(function () {
 		$(this).parents(".custom_tabs_horizontal_inner_steps .custom_tabs_content.tab_content_active").children(".custom_tabs_content_inner_steps.custom_tabs_content_inner_steps_active").hide().prev().addClass("custom_tabs_content_inner_steps_active").show().next().removeClass("custom_tabs_content_inner_steps_active");
 	});
+
+	// horizontal scroll
+	$('.horizontal_scroll_content').bind("DOMMouseScroll mousewheel", function (event) {
+		amount = 40;
+		var oEvent = event.originalEvent, 
+		direction = oEvent.detail ? oEvent.detail * -amount : oEvent.wheelDelta, 
+		position = $(this).scrollLeft();
+		position += direction > 0 ? -amount : amount;
+		$(this).scrollLeft(position);
+		event.preventDefault();
+	});
+
+
+	// jQuery(function ($) {
+	// 	$.fn.hScroll = function (amount) {
+	// 		amount = amount || 120;
+	// 		$(this).bind("DOMMouseScroll mousewheel", function (event) {
+	// 			var oEvent = event.originalEvent, 
+	// 			direction = oEvent.detail ? oEvent.detail * -amount : oEvent.wheelDelta, 
+	// 			position = $(this).scrollLeft();
+	// 			position += direction > 0 ? -amount : amount;
+	// 			$(this).scrollLeft(position);
+	// 			event.preventDefault();
+	// 		})
+	// 	};
+	// });
+
+	// $(document).ready(function() {
+	// 	$('.horizontal_scroll_content').hScroll(60); 
+	// });
 });
