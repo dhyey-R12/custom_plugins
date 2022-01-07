@@ -262,3 +262,34 @@ img{
 	margin-right: auto;
 }
 /*custom tabs horizontal inner steps end*/
+
+/*horizontal scroll start*/
+.horizontal_scroll_content {
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+.horizontal_scroll .custom_row {
+    display: flex;
+}
+.horizontal_scroll .custom_col {
+    flex-grow: 1;
+}
+.horizontal_scroll .horizontal_scroll_image {
+	position: relative;
+    padding-top: 80%;
+    overflow: hidden;
+    width: 400px;
+}
+.horizontal_scroll .horizontal_scroll_image img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	max-width: 100%;
+	max-height: 100%;
+	min-width: 100%;
+	min-height: 100%;
+	object-fit: cover;
+}
+/*horizontal scroll end*/
