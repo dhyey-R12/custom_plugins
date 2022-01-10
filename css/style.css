@@ -270,9 +270,11 @@ img{
 }
 .horizontal_scroll .custom_row {
     display: flex;
+    margin: 0 -8px;
 }
 .horizontal_scroll .custom_col {
     flex-grow: 1;
+    padding: 0 8px;
 }
 .horizontal_scroll .horizontal_scroll_image {
 	position: relative;
