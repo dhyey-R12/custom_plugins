@@ -1,17 +1,54 @@
+/*fonts css start*/
+@font-face {
+    font-family: 'Yu Gothic';
+    src: url('../fonts/YuGothic-Bold.eot');
+    src: url('../fonts/YuGothic-Bold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/YuGothic-Bold.woff2') format('woff2'),
+    url('../fonts/YuGothic-Bold.woff') format('woff'),
+    url('../fonts/YuGothic-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Yu Gothic';
+    src: url('../fonts/YuGothic-Medium.eot');
+    src: url('../fonts/YuGothic-Medium.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/YuGothic-Medium.woff2') format('woff2'),
+    url('../fonts/YuGothic-Medium.woff') format('woff'),
+    url('../fonts/YuGothic-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Yu Gothic';
+    src: url('../fonts/YuGothic-Regular.eot');
+    src: url('../fonts/YuGothic-Regular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/YuGothic-Regular.woff2') format('woff2'),
+    url('../fonts/YuGothic-Regular.woff') format('woff'),
+    url('../fonts/YuGothic-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+/*fonts css end*/
+
+/*common css start*/
 *{
-	box-sizing: border-box;
-	margin: 0px;
-	padding: 0px;
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
 }
 body, h1, h2, h3, h4, h5, h6, ul, li, p, a, span{
-	margin: 0px;
-	padding: 0px;
+    margin: 0px;
+    padding: 0px;
 }
 body {
-	-webkit-font-smoothing: antialiased;
-	-moz-font-smoothing: antialiased;
-	-font-smoothing: antialiased;
-	font-family: 'Yu Gothic';
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -font-smoothing: antialiased;
+    font-family: 'Yu Gothic';
 }
 a, button, input[type=submit], select{
 	cursor: pointer;
@@ -31,6 +68,13 @@ ul, ol, li{
 img{
 	max-width: 100%;
 	display: block;
+}
+.plugin_heading {
+	font-size: 24px;
+    line-height: 40px;
+    color: #333333;
+    margin-bottom: 5px;
+    text-transform: capitalize;
 }
 /*accordion css start*/
 .custom_container {
@@ -95,7 +139,6 @@ img{
 }
 .custom_drop_menu {
 	border: 1px solid #333;
-/*display: none;*/
 }
 .drop_menu_item_container {
 	padding: 10px;
