@@ -115,8 +115,6 @@ $(document).ready(function(){
 		$(this).parents(".custom_tabs_horizontal_inner_steps .custom_tabs_content.tab_content_active").children(".custom_tabs_content_inner_steps.custom_tabs_content_inner_steps_active").hide().prev().addClass("custom_tabs_content_inner_steps_active").show().next().removeClass("custom_tabs_content_inner_steps_active");
 	});
 
-
-
 	// horizontal scroll
 	$('.horizontal_scroll_content').bind("DOMMouseScroll mousewheel", function (event) {
 		amount = 40;
@@ -127,70 +125,4 @@ $(document).ready(function(){
 		$(this).scrollLeft(position);
 		event.preventDefault();
 	});
-
-
-	// jQuery(function ($) {
-	// 	$.fn.hScroll = function (amount) {
-	// 		amount = amount || 120;
-	// 		$(this).bind("DOMMouseScroll mousewheel", function (event) {
-	// 			var oEvent = event.originalEvent, 
-	// 			direction = oEvent.detail ? oEvent.detail * -amount : oEvent.wheelDelta, 
-	// 			position = $(this).scrollLeft();
-	// 			position += direction > 0 ? -amount : amount;
-	// 			$(this).scrollLeft(position);
-	// 			event.preventDefault();
-	// 		})
-	// 	};
-	// });
-
-	// $(document).ready(function() {
-	// 	$('.horizontal_scroll_content').hScroll(60); 
-	// });
-
-	// jQuery(function ($) {
-	// 	$.fn.coustomtabs = function () {
-	// 		var activeclass = $(this);
-	// 		console.log("active Class----->", activeclass);
-	// 		$(activeclass + ".custom_tabs_content").hide();
-	// 		if ($(activeclass + ".custom_tabs_heading_btns a").hasClass("active_tab_horizontal_inner")) {
-	// 			var tagid_active = $(activeclass + ".custom_tabs_heading_btns a.active_tab_horizontal_inner").data('tag');
-	// 			$('#'+tagid_active).addClass('tab_content_active');
-	// 			$(activeclass + ".custom_tabs_content.tab_content_active").show();
-	// 		}else {
-	// 			$(activeclass + ".custom_tabs_content").removeClass("tab_content_active").hide();
-	// 			$(activeclass + ".custom_tabs_heading_btns a.active_tab_horizontal_inner").removeClass("active_tab_horizontal_inner");
-	// 		}
-	// 		$(activeclass + ".custom_tabs_heading_btns a").click(function(e){
-	// 			e.preventDefault();
-	// 			$(activeclass + ".custom_tabs_heading_btns a").removeClass("active_tab_horizontal_inner");
-	// 			$(this).addClass('active_tab_horizontal_inner');
-	// 			var tagid = $(this).data('tag');
-	// 			$(activeclass + ".custom_tabs_content").removeClass('tab_content_active').hide();
-	// 			$('#'+tagid).addClass('tab_content_active').show();
-	// 			$(activeclass + ".custom_tabs_content.tab_content_active .custom_tabs_content_inner_steps").first().addClass("custom_tabs_content_inner_steps_active").show();
-	// 		});
-	// 		$(activeclass + ".next_step").click(function () {
-	// 			var tagid_active = $(activeclass + ".custom_tabs_heading_btns li a.active_tab_horizontal_inner").parents(activeclass + ".custom_tabs_heading_btns li").next().children(activeclass + ".custom_tabs_heading_btns li a").data('tag');
-	// 			$(activeclass + ".custom_tabs_heading_btns li a.active_tab_horizontal_inner").removeClass('active_tab_horizontal_inner').parents(activeclass + ".custom_tabs_heading_btns li").next().children(activeclass + ".custom_tabs_heading_btns li a").addClass('active_tab_horizontal_inner');
-	// 			$(activeclass + ".custom_tabs_content").removeClass('tab_content_active').hide();
-	// 			$('#'+tagid_active).addClass('tab_content_active').show();
-	// 			$(activeclass + ".custom_tabs_content.tab_content_active .custom_tabs_content_inner_steps").first().addClass("custom_tabs_content_inner_steps_active").show();
-	// 		});
-	// 		$(activeclass + ".prev_step").click(function () {
-	// 			var tagid_active = $(activeclass + ".custom_tabs_heading_btns li a.active_tab_horizontal_inner").parents(activeclass + ".custom_tabs_heading_btns li").prev().children(activeclass + ".custom_tabs_heading_btns li a").data('tag');
-	// 			$(activeclass + ".custom_tabs_heading_btns li a.active_tab_horizontal_inner").removeClass('active_tab_horizontal_inner').parents(activeclass + ".custom_tabs_heading_btns li").prev().children(activeclass + ".custom_tabs_heading_btns li a").addClass('active_tab_horizontal_inner');
-	// 			$(activeclass + ".custom_tabs_content").removeClass('tab_content_active').hide();
-	// 			$('#'+tagid_active).addClass('tab_content_active').show();
-	// 		});
-	// 		$(activeclass + ".custom_tabs_content .custom_tabs_content_inner_steps").hide();
-	// 		$(activeclass + ".next_step_inner").click(function () {
-	// 			$(this).parents(activeclass + ".custom_tabs_content.tab_content_active").children(".custom_tabs_content_inner_steps.custom_tabs_content_inner_steps_active").hide().next().addClass("custom_tabs_content_inner_steps_active").show().prev().removeClass("custom_tabs_content_inner_steps_active");
-	// 		});
-	// 		$(activeclass + ".prev_step_inner").click(function () {
-	// 			$(this).parents(activeclass + ".custom_tabs_content.tab_content_active").children(".custom_tabs_content_inner_steps.custom_tabs_content_inner_steps_active").hide().prev().addClass("custom_tabs_content_inner_steps_active").show().next().removeClass("custom_tabs_content_inner_steps_active");
-	// 		});
-	// 	};
-	// });
-
-	// $('.one').coustomtabs(); 
 });
