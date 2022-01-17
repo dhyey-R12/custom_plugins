@@ -338,3 +338,24 @@ img{
 	object-fit: cover;
 }
 /*horizontal scroll end*/
+
+@media (max-width: 767px) {
+	.custom_tabs .custom_tabs_heading_btns li a {
+		margin-bottom: 10px !important;
+	}
+	.custom_tabs .custom_tabs_inner_heading, .custom_tabs .custom_tabs_inner_content {
+		flex: 0 0 100%;
+		max-width: 100%;
+		padding-left: 0;
+	}
+}
+@media (max-width: 575px) {
+	.custom_tabs_horizontal .custom_tabs_heading_btns li {
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
+	.custom_tabs_horizontal_inner_steps .custom_tabs_heading_btns li {
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
+}
