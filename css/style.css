@@ -142,6 +142,7 @@ img{
 }
 .drop_menu_item_container {
 	padding: 10px;
+	background-color: #fff;
 }
 /*accordion css end*/
 /*custom tabs start*/
@@ -182,6 +183,7 @@ img{
 .custom_tabs .custom_tabs_inner_content .custom_tabs_content {
 	padding: 10px;
 	border: 1px solid #333;
+	background-color: #fff;
 }
 /*custom tabs end*/
 /*custom tabs horizontal start*/
@@ -225,6 +227,7 @@ img{
 .custom_tabs_horizontal .custom_tabs_inner_content .custom_tabs_content {
     padding: 10px;
     border: 1px solid #333;
+    background-color: #fff;
 }
 .custom_tabs_horizontal .custom_tabs_horizontal_btn span {
 	width: 100%;
@@ -287,6 +290,7 @@ img{
 .custom_tabs_horizontal_inner_steps .custom_tabs_inner_content .custom_tabs_content {
     padding: 10px;
     border: 1px solid #333;
+    background-color: #fff;
 }
 .custom_tabs_horizontal_inner_steps .custom_tabs_horizontal_btn span {
 	width: 100%;
@@ -338,6 +342,82 @@ img{
 	object-fit: cover;
 }
 /*horizontal scroll end*/
+
+/*bubble css start*/
+#floatbubble {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: -1;
+}
+/*bubble css end*/
+
+/*back to top btn css start*/
+.back_to_top_btn {
+	position: fixed;
+	right: 20px;
+	bottom: 10px;
+	cursor: pointer;
+	background-color: #fff;
+	border-radius: 50%;
+}
+.percent {
+	border-radius: 50%;
+	overflow: hidden;
+	width: 44px;
+	height: 44px;
+	display: block;
+}
+.percent svg {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    transform: rotate(270deg);
+}
+.percent svg circle {
+	width: 100%;
+	height: 100%;
+	fill: none;
+	stroke: #fff;
+	stroke-width: 3;
+	transform: translate(2px, 2px);
+}
+.percent svg circle:nth-child(2) {
+	stroke-dasharray: 125;
+	stroke-dashoffset: 125;
+}
+.percent svg circle:nth-child(2) {
+	stroke: #333;
+}
+.back_to_top_btn span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    box-sizing: border-box;
+    color: #333333;
+}
+.back_to_top_btn span::before {
+	content: '\f062';
+	font-family: FontAwesome;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	font-size: 14px;
+	text-align: center;
+	border-radius: 100%;
+	line-height: 44px;
+	color: #333;
+}
+/*back to top btn css end*/
 
 @media (max-width: 767px) {
 	.custom_tabs .custom_tabs_heading_btns li a {
