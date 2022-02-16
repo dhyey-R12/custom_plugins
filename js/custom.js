@@ -675,4 +675,7 @@ $(document).ready(function(){
 			scrollTop: 0,
 		}, 800);
 	});
+
+	// custom select JS
+	
 });
