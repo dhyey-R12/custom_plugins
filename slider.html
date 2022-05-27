@@ -1,10 +1,12 @@
+
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Slider Animation</title>
-	<link rel="stylesheet" type="text/css" href="css/slick.css" />
+	<link rel="stylesheet" href="css/animate.min.css">
+	<link rel="stylesheet" type="text/css" href="css/slick.css">
 	<style type="text/css">
 		* {
 			margin: 0;
@@ -31,6 +33,23 @@
 		.carousel_slide {
 			overflow: hidden;
 			position: relative;
+		}
+		.carousel_slide_content {
+			position: absolute;
+			top: 130px;
+			left: 70px;
+			z-index: 3;
+			color: #fff;
+		}
+		.carousel_slide_content h1 {
+			font-size: 130px;
+			line-height: 1;
+		}
+		.slick-active.move_right .carousel_slide_content h1 {
+			animation: backInRight 1s cubic-bezier(0.7, 0, 0.3, 1) 0.7s both;
+		}
+		.slick-active.move_left .carousel_slide_content h1 {
+			animation: backInLeft 0.875s cubic-bezier(0.7, 0, 0.3, 1) 0.7s both;
 		}
 		.carousel_slide_overlay {
 			background-color: transparent;
@@ -73,7 +92,7 @@
 		}
 		.slick-active .carousel_slide_overlay {
 			animation: scale-in-hor-right 1.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0.25s reverse both;
-			background-position: center right;
+			/*background-position: center right;*/
 		}
 		@keyframes scale-in-hor-right {
 			0% {
@@ -136,7 +155,7 @@
 		}
 		.slick-slider .slick-arrow {
 			position: absolute;
-			bottom: 0;
+			bottom: 4px;
 			z-index: 1;
 			width: 40px;
 			height: 40px;
@@ -155,108 +174,115 @@
 		.slick-slider .slick-arrow.slick-prev {
 			right: 78px;
 		}
-		.carousel_slide_content {
-			position: absolute;
-			top: 130px;
-			left: 70px;
-			z-index: 3;
-			color: #fff;
-		}
-		.carousel_slide_content h1 {
-			font-size: 130px;
-			line-height: 1;
-		}
-		@media (max-width: 767px) {
+		@media(max-width: 575px) {
+			section.slider_section {
+				height: 100vh;
+				overflow: hidden;
+			}
 			.slider-image {
-				padding-top: calc(100vh - 7px);
+				padding-top: 100vh;
+			}
+			.carousel_slide_content {
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				display: flex;
+				flex-wrap: wrap;
+				align-content: center;
+				justify-content: center;
+			}
+			.carousel_slide_content h1 {
+				font-size: 80px;
 			}
 			.slick-slider .slick-arrow {
 				top: 0;
+				bottom: 0;
 				margin: auto;
 			}
 			.slick-slider .slick-arrow.slick-prev {
 				left: 15px;
-				right: auto;
+				margin-left: 0;
+				margin-right: 0;
 			}
-			.slick-slider .slick-arrow.slick-next {
-				right: 15px;
-			}
-			.slick-active .carousel_slide_overlay {
-				background-position: center;
+			.slick-slider .slick-arrow.slick-prev {
+				left: 15px;
 			}
 		}
 	</style>
 </head>
 <body>
 
-	<div class="carousel">
-		<div>
-			<div class="carousel_slide">
-				<div class="carousel_slide_inner slider-image">
-					<img class="carousel_image" src="images/image1.jpg" alt="Image">
-					<div class="carousel_slide_overlay"></div>
+	<section class="slider_section">
+		<div class="carousel">
+			<div>
+				<div class="carousel_slide">
+					<div class="carousel_slide_inner slider-image">
+						<img class="carousel_image" src="images/image1.jpg" alt="Image">
+						<div class="carousel_slide_overlay"></div>
+					</div>
+					<div class="carousel_slide_content">
+						<h1>01</h1>
+					</div>
 				</div>
-				<!-- <div class="carousel_slide_content">
-					<h1>01</h1>
-				</div> -->
+			</div>
+			<div>
+				<div class="carousel_slide">
+					<div class="carousel_slide_inner slider-image">
+						<img class="carousel_image" src="images/image2.jpg" alt="Image">
+						<div class="carousel_slide_overlay"></div>
+					</div>
+					<div class="carousel_slide_content">
+						<h1>02</h1>
+					</div>
+				</div>
+			</div>
+			<div>
+				<div class="carousel_slide">
+					<div class="carousel_slide_inner slider-image">
+						<img class="carousel_image" src="images/image3.jpg" alt="Image">
+						<div class="carousel_slide_overlay"></div>
+					</div>
+					<div class="carousel_slide_content">
+						<h1>03</h1>
+					</div>
+				</div>
+			</div>
+			<div>
+				<div class="carousel_slide">
+					<div class="carousel_slide_inner slider-image">
+						<img class="carousel_image" src="images/image4.jpg" alt="Image">
+						<div class="carousel_slide_overlay"></div>
+					</div>
+					<div class="carousel_slide_content">
+						<h1>04</h1>
+					</div>
+				</div>
+			</div>
+			<div>
+				<div class="carousel_slide">
+					<div class="carousel_slide_inner slider-image">
+						<img class="carousel_image" src="images/image5.jpg" alt="Image">
+						<div class="carousel_slide_overlay"></div>
+					</div>
+					<div class="carousel_slide_content">
+						<h1>05</h1>
+					</div>
+				</div>
+			</div>
+			<div>
+				<div class="carousel_slide">
+					<div class="carousel_slide_inner slider-image">
+						<img class="carousel_image" src="images/image6.jpg" alt="Image">
+						<div class="carousel_slide_overlay"></div>
+					</div>
+					<div class="carousel_slide_content">
+						<h1>06</h1>
+					</div>
+				</div>
 			</div>
 		</div>
-		<div>
-			<div class="carousel_slide">
-				<div class="carousel_slide_inner slider-image">
-					<img class="carousel_image" src="images/image2.jpg" alt="Image">
-					<div class="carousel_slide_overlay"></div>
-				</div>
-				<!-- <div class="carousel_slide_content">
-					<h1>02</h1>
-				</div> -->
-			</div>
-		</div>
-		<div>
-			<div class="carousel_slide">
-				<div class="carousel_slide_inner slider-image">
-					<img class="carousel_image" src="images/image3.jpg" alt="Image">
-					<div class="carousel_slide_overlay"></div>
-				</div>
-				<!-- <div class="carousel_slide_content">
-					<h1>03</h1>
-				</div> -->
-			</div>
-		</div>
-		<div>
-			<div class="carousel_slide">
-				<div class="carousel_slide_inner slider-image">
-					<img class="carousel_image" src="images/image4.jpg" alt="Image">
-					<div class="carousel_slide_overlay"></div>
-				</div>
-				<!-- <div class="carousel_slide_content">
-					<h1>04</h1>
-				</div> -->
-			</div>
-		</div>
-		<div>
-			<div class="carousel_slide">
-				<div class="carousel_slide_inner slider-image">
-					<img class="carousel_image" src="images/image5.jpg" alt="Image">
-					<div class="carousel_slide_overlay"></div>
-				</div>
-				<!-- <div class="carousel_slide_content">
-					<h1>05</h1>
-				</div> -->
-			</div>
-		</div>
-		<div>
-			<div class="carousel_slide">
-				<div class="carousel_slide_inner slider-image">
-					<img class="carousel_image" src="images/image6.jpg" alt="Image">
-					<div class="carousel_slide_overlay"></div>
-				</div>
-				<!-- <div class="carousel_slide_content">
-					<h1>06</h1>
-				</div> -->
-			</div>
-		</div>
-	</div>
+	</section>
 
 	<script src="js/jquery.min.js"></script>
 	<script src="js/fonts-awesome-5.js"></script>
@@ -270,12 +296,9 @@
 				dots: true,
 				fade: true,
 				infinite: false,
-				speed: 3000,
-				focusOnSelect: true,
+				speed: 0,
 				nextArrow: '<button class="slick-next slick-arrow" type="button"><i class="fas fa-chevron-right"></i></button>',
 				prevArrow: '<button class="slick-prev slick-arrow" type="button"><i class="fas fa-chevron-left"></i></button>',
-				fade: true,
-				cssEase: 'fade-in',
 			});
 			var addAnimationClass = true;
 			carousel.on('beforeChange', function(e, slick, current, next, event) {
@@ -302,8 +325,6 @@
 				}
 			});
 
-			var slide_number = 0;
-			carousel.slick('slickGoTo', slide_number, false);
 			// carousel.on('afterChange', function(e, slick, current, next, event) {
 			// 	var decl = current - next;
 			// 	if(decl == 1 || decl == (slick.slideCount-1)*(-1) ) {

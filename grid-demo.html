@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Grid Demo</title>
+	<style type="text/css">
+		* {
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+		}
+		h1,h2,h3,h4,h5,h6 {
+			margin: 0;
+			font-size: 1.5rem;
+		}
+		section.custom_col_grid {
+			padding: 15px;
+		}
+		.grid_row_demo-1 {
+			overflow: hidden;
+		}
+		.custom_col {
+			background-color: burlywood;
+			text-align: center;
+			padding: 5px 0;
+			margin: 5px 0;
+			/*overflow: hidden;*/
+		}
+		.custom_col_grid .heading {
+			margin-bottom: 10px;
+			margin-top: 10px;
+		}
+		.grid_row_demo-1 .heading {
+			margin-top: 0;
+		}
+		.custom_col_grid .heading h1 {
+			font-size: 30px;
+		}
+		.grid_row {
+			display: grid;
+			grid-template-columns: repeat(12,minmax(0,1fr));
+			margin: 0 -15px;
+			/*grid-gap: 0 30px;*/
+		}
+		.col_grid_1 {
+			padding: 0 15px;
+			grid-column-end: span 1;
+		}
+		.col_grid_2 {
+			padding: 0 15px;
+			grid-column-end: span 2;
+		}
+		.col_grid_3 {
+			padding: 0 15px;
+			grid-column-end: span 3;
+		}
+		.col_grid_4 {
+			padding: 0 15px;
+			grid-column-end: span 4;
+		}
+		.col_grid_5 {
+			padding: 0 15px;
+			grid-column-end: span 5;
+		}
+		.col_grid_6 {
+			padding: 0 15px;
+			grid-column-end: span 6;
+		}
+		.col_grid_7 {
+			padding: 0 15px;
+			grid-column-end: span 7;
+		}
+		.col_grid_8 {
+			padding: 0 15px;
+			grid-column-end: span 8;
+		}
+		.col_grid_9 {
+			padding: 0 15px;
+			grid-column-end: span 9;
+		}
+		.col_grid_10 {
+			padding: 0 15px;
+			grid-column-end: span 10;
+		}
+		.col_grid_11 {
+			padding: 0 15px;
+			grid-column-end: span 11;
+		}
+		.col_grid_12 {
+			padding: 0 15px;
+			grid-column-end: span 12;
+		}
+		.grid_row_demo-custom .grid_row {
+			grid-template-columns: 500px 1fr;
+		}
+		.grid_row_demo-custom .col_grid_heading,
+		.grid_row_demo-custom .col_grid_text {
+			padding: 0 15px;
+		}
+		/*576 > screen || sm screen*/
+		@media(min-width: 576px) {
+			.col_grid_1-sm {
+				grid-column-end: span 1;
+			}
+			.col_grid_2-sm {
+				grid-column-end: span 2;
+			}
+			.col_grid_3-sm {
+				grid-column-end: span 3;
+			}
+			.col_grid_4-sm {
+				grid-column-end: span 4;
+			}
+			.col_grid_5-sm {
+				grid-column-end: span 5;
+			}
+			.col_grid_6-sm {
+				grid-column-end: span 6;
+			}
+			.col_grid_7-sm {
+				grid-column-end: span 7;
+			}
+			.col_grid_8-sm {
+				grid-column-end: span 8;
+			}
+			.col_grid_9-sm {
+				grid-column-end: span 9;
+			}
+			.col_grid_10-sm {
+				grid-column-end: span 10;
+			}
+			.col_grid_11-sm {
+				grid-column-end: span 11;
+			}
+			.col_grid_12-sm {
+				grid-column-end: span 12;
+			}
+		}
+		/*768 > screen || md screen*/
+		@media(min-width: 768px) {
+			.col_grid_1-md {
+				grid-column-end: span 1;
+			}
+			.col_grid_2-md {
+				grid-column-end: span 2;
+			}
+			.col_grid_3-md {
+				grid-column-end: span 3;
+			}
+			.col_grid_4-md {
+				grid-column-end: span 4;
+			}
+			.col_grid_5-md {
+				grid-column-end: span 5;
+			}
+			.col_grid_6-md {
+				grid-column-end: span 6;
+			}
+			.col_grid_7-md {
+				grid-column-end: span 7;
+			}
+			.col_grid_8-md {
+				grid-column-end: span 8;
+			}
+			.col_grid_9-md {
+				grid-column-end: span 9;
+			}
+			.col_grid_10-md {
+				grid-column-end: span 10;
+			}
+			.col_grid_11-md {
+				grid-column-end: span 11;
+			}
+			.col_grid_12-md {
+				grid-column-end: span 12;
+			}
+		}
+		/*992 > screen || lg screen*/
+		@media(min-width: 992px) {
+			.col_grid_1-lg {
+				grid-column-end: span 1;
+			}
+			.col_grid_2-lg {
+				grid-column-end: span 2;
+			}
+			.col_grid_3-lg {
+				grid-column-end: span 3;
+			}
+			.col_grid_4-lg {
+				grid-column-end: span 4;
+			}
+			.col_grid_5-lg {
+				grid-column-end: span 5;
+			}
+			.col_grid_6-lg {
+				grid-column-end: span 6;
+			}
+			.col_grid_7-lg {
+				grid-column-end: span 7;
+			}
+			.col_grid_8-lg {
+				grid-column-end: span 8;
+			}
+			.col_grid_9-lg {
+				grid-column-end: span 9;
+			}
+			.col_grid_10-lg {
+				grid-column-end: span 10;
+			}
+			.col_grid_11-lg {
+				grid-column-end: span 11;
+			}
+			.col_grid_12-lg {
+				grid-column-end: span 12;
+			}
+		}
+		/*1200 > screen || xl screen*/
+		@media(min-width: 1200px) {
+			.col_grid_1-xl {
+				grid-column-end: span 1;
+			}
+			.col_grid_2-xl {
+				grid-column-end: span 2;
+			}
+			.col_grid_3-xl {
+				grid-column-end: span 3;
+			}
+			.col_grid_4-xl {
+				grid-column-end: span 4;
+			}
+			.col_grid_5-xl {
+				grid-column-end: span 5;
+			}
+			.col_grid_6-xl {
+				grid-column-end: span 6;
+			}
+			.col_grid_7-xl {
+				grid-column-end: span 7;
+			}
+			.col_grid_8-xl {
+				grid-column-end: span 8;
+			}
+			.col_grid_9-xl {
+				grid-column-end: span 9;
+			}
+			.col_grid_10-xl {
+				grid-column-end: span 10;
+			}
+			.col_grid_11-xl {
+				grid-column-end: span 11;
+			}
+			.col_grid_12-xl {
+				grid-column-end: span 12;
+			}
+		}
+		@media(max-width: 767px) {
+			.grid_row_demo-custom .grid_row {
+				grid-template-columns: auto;
+			}
+		}
+	</style>
+</head>
+<body>
+	<section class="custom_col_grid">
+		<div class="grid_row_demo-1">
+			<div class="heading">
+				<h1>Grid Columns Demo</h1>
+			</div>
+			<div class="grid_row">
+				<div class="col_grid_1">
+					<div class="custom_col">
+						<h2>Col 1</h2>
+					</div>
+				</div>
+				<div class="col_grid_1">
+					<div class="custom_col">
+						<h2>Col 2</h2>
+					</div>
+				</div>
+				<div class="col_grid_1">
+					<div class="custom_col">
+						<h2>Col 3</h2>
+					</div>
+				</div>
+				<div class="col_grid_1">
+					<div class="custom_col">
+						<h2>Col 4</h2>
+					</div>
+				</div>
+				<div class="col_grid_1">
+					<div class="custom_col">
+						<h2>Col 5</h2>
+					</div>
+				</div>
+				<div class="col_grid_1">
+					<div class="custom_col">
+						<h2>Col 6</h2>
+					</div>
+				</div>
+				<div class="col_grid_1">
+					<div class="custom_col">
+						<h2>Col 7</h2>
+					</div>
+				</div>
+				<div class="col_grid_1">
+					<div class="custom_col">
+						<h2>Col 8</h2>
+					</div>
+				</div>
+				<div class="col_grid_1">
+					<div class="custom_col">
+						<h2>Col 9</h2>
+					</div>
+				</div>
+				<div class="col_grid_1">
+					<div class="custom_col">
+						<h2>Col 10</h2>
+					</div>
+				</div>
+				<div class="col_grid_1">
+					<div class="custom_col">
+						<h2>Col 11</h2>
+					</div>
+				</div>
+				<div class="col_grid_1">
+					<div class="custom_col">
+						<h2>Col 12</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="grid_row_demo-2">
+			<div class="heading">
+				<h1>Grid 12 Columns Demo</h1>
+			</div>
+			<div class="grid_row">
+				<div class="col_grid_12 col_grid_2-sm col_grid_1-lg">
+					<div class="custom_col">
+						<h2>Col 1</h2>
+					</div>
+				</div>
+				<div class="col_grid_12 col_grid_2-sm col_grid_1-lg">
+					<div class="custom_col">
+						<h2>Col 1</h2>
+					</div>
+				</div>
+				<div class="col_grid_12 col_grid_2-sm col_grid_1-lg">
+					<div class="custom_col">
+						<h2>Col 1</h2>
+					</div>
+				</div>
+				<div class="col_grid_12 col_grid_2-sm col_grid_1-lg">
+					<div class="custom_col">
+						<h2>Col 1</h2>
+					</div>
+				</div>
+				<div class="col_grid_12 col_grid_2-sm col_grid_1-lg">
+					<div class="custom_col">
+						<h2>Col 1</h2>
+					</div>
+				</div>
+				<div class="col_grid_12 col_grid_2-sm col_grid_1-lg">
+					<div class="custom_col">
+						<h2>Col 1</h2>
+					</div>
+				</div>
+				<div class="col_grid_12 col_grid_2-sm col_grid_1-lg">
+					<div class="custom_col">
+						<h2>Col 1</h2>
+					</div>
+				</div>
+				<div class="col_grid_12 col_grid_2-sm col_grid_1-lg">
+					<div class="custom_col">
+						<h2>Col 1</h2>
+					</div>
+				</div>
+				<div class="col_grid_12 col_grid_2-sm col_grid_1-lg">
+					<div class="custom_col">
+						<h2>Col 1</h2>
+					</div>
+				</div>
+				<div class="col_grid_12 col_grid_2-sm col_grid_1-lg">
+					<div class="custom_col">
+						<h2>Col 1</h2>
+					</div>
+				</div>
+				<div class="col_grid_12 col_grid_2-sm col_grid_1-lg">
+					<div class="custom_col">
+						<h2>Col 1</h2>
+					</div>
+				</div>
+				<div class="col_grid_12 col_grid_2-sm col_grid_1-lg">
+					<div class="custom_col">
+						<h2>Col 1</h2>
+					</div>
+				</div>
+				<div class="col_grid_12 col_grid_2-sm">
+					<div class="custom_col">
+						<h2>Col 2</h2>
+					</div>
+				</div>
+				<div class="col_grid_12 col_grid_2-sm">
+					<div class="custom_col">
+						<h2>Col 2</h2>
+					</div>
+				</div>
+				<div class="col_grid_12 col_grid_2-sm">
+					<div class="custom_col">
+						<h2>Col 2</h2>
+					</div>
+				</div>
+				<div class="col_grid_12 col_grid_2-sm">
+					<div class="custom_col">
+						<h2>Col 2</h2>
+					</div>
+				</div>
+				<div class="col_grid_12 col_grid_2-sm">
+					<div class="custom_col">
+						<h2>Col 2</h2>
+					</div>
+				</div>
+				<div class="col_grid_12 col_grid_2-sm">
+					<div class="custom_col">
+						<h2>Col 2</h2>
+					</div>
+				</div>
+				<div class="col_grid_12 col_grid_3-sm">
+					<div class="custom_col">
+						<h2>Col 3</h2>
+					</div>
+				</div>
+				<div class="col_grid_12 col_grid_3-sm">
+					<div class="custom_col">
+						<h2>Col 3</h2>
+					</div>
+				</div>
+				<div class="col_grid_12 col_grid_3-sm">
+					<div class="custom_col">
+						<h2>Col 3</h2>
+					</div>
+				</div>
+				<div class="col_grid_12 col_grid_3-sm">
+					<div class="custom_col">
+						<h2>Col 3</h2>
+					</div>
+				</div>
+				<div class="col_grid_12 col_grid_4-sm">
+					<div class="custom_col">
+						<h2>Col 4</h2>
+					</div>
+				</div>
+				<div class="col_grid_12 col_grid_4-sm">
+					<div class="custom_col">
+						<h2>Col 4</h2>
+					</div>
+				</div>
+				<div class="col_grid_12 col_grid_4-sm">
+					<div class="custom_col">
+						<h2>Col 4</h2>
+					</div>
+				</div>
+				<div class="col_grid_12 col_grid_5-sm">
+					<div class="custom_col">
+						<h2>Col 5</h2>
+					</div>
+				</div>
+				<div class="col_grid_12 col_grid_5-sm">
+					<div class="custom_col">
+						<h2>Col 5</h2>
+					</div>
+				</div>
+				<div class="col_grid_12 col_grid_2-sm">
+					<div class="custom_col">
+						<h2>Col 2</h2>
+					</div>
+				</div>
+				<div class="col_grid_12 col_grid_6-sm">
+					<div class="custom_col">
+						<h2>Col 6</h2>
+					</div>
+				</div>
+				<div class="col_grid_12 col_grid_6-sm">
+					<div class="custom_col">
+						<h2>Col 6</h2>
+					</div>
+				</div>
+				<div class="col_grid_12 col_grid_7-sm">
+					<div class="custom_col">
+						<h2>Col 7</h2>
+					</div>
+				</div>
+				<div class="col_grid_12 col_grid_5-sm">
+					<div class="custom_col">
+						<h2>Col 5</h2>
+					</div>
+				</div>
+				<div class="col_grid_12 col_grid_8-sm">
+					<div class="custom_col">
+						<h2>Col 8</h2>
+					</div>
+				</div>
+				<div class="col_grid_12 col_grid_4-sm">
+					<div class="custom_col">
+						<h2>Col 4</h2>
+					</div>
+				</div>
+				<div class="col_grid_12 col_grid_9-sm">
+					<div class="custom_col">
+						<h2>Col 9</h2>
+					</div>
+				</div>
+				<div class="col_grid_12 col_grid_3-sm">
+					<div class="custom_col">
+						<h2>Col 3</h2>
+					</div>
+				</div>
+				<div class="col_grid_12 col_grid_10-sm">
+					<div class="custom_col">
+						<h2>Col 10</h2>
+					</div>
+				</div>
+				<div class="col_grid_12 col_grid_2-sm">
+					<div class="custom_col">
+						<h2>Col 2</h2>
+					</div>
+				</div>
+				<div class="col_grid_12 col_grid_10-sm col_grid_11-lg">
+					<div class="custom_col">
+						<h2>Col 11</h2>
+					</div>
+				</div>
+				<div class="col_grid_12 col_grid_2-sm col_grid_1-lg">
+					<div class="custom_col">
+						<h2>Col 1</h2>
+					</div>
+				</div>
+				<div class="col_grid_12">
+					<div class="custom_col">
+						<h2>Col 12</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="grid_row_demo-custom">
+			<div class="heading">
+				<h1>Grid Custom Columns Demo</h1>
+			</div>
+			<div class="grid_row">
+				<div class="col_grid_heading">
+					<div class="custom_col">
+						<h2>Col Heading</h2>
+					</div>
+				</div>
+				<div class="col_grid_text">
+					<div class="custom_col">
+						<h2>Col Text</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="grid_row_demo-responsive">
+			<div class="heading">
+				<h1>Grid Responsive Columns Demo</h1>
+			</div>
+			<div class="grid_row">
+				<div class="col_grid_12 col_grid_6-md">
+					<div class="custom_col">
+						<h2>Col 6-lg 12-sm</h2>
+					</div>
+				</div>
+				<div class="col_grid_12 col_grid_6-md">
+					<div class="custom_col">
+						<h2>Col 6-lg 12-sm</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>
