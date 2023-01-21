@@ -11,6 +11,7 @@ $(window).on("load", function() {
 			!(t = t.removeAttr("xmlns:a")).attr("viewBox") && t.attr("height") && t.attr("width") && t.attr("viewBox", "0 0 " + t.attr("height") + " " + t.attr("width")),
 			i.replaceWith(t)
 		}, "xml")
+		$(this).addClass("done");
 	});
 })
 
