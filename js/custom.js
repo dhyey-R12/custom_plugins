@@ -1,4 +1,41 @@
 $(document).ready(function(){
+
+	// Slider JS
+	var carousel = $('.carousel');
+	carousel.slick({
+		arrows: true,
+		dots: true,
+		fade: true,
+		infinite: false,
+		speed: 0,
+		nextArrow: '<button class="slick-next slick-arrow" type="button"><i class="fas fa-chevron-right"></i></button>',
+		prevArrow: '<button class="slick-prev slick-arrow" type="button"><i class="fas fa-chevron-left"></i></button>',
+	});
+	var addAnimationClass = true;
+	carousel.on('beforeChange', function(e, slick, current, next, event) {
+		var decl = current - next;
+		if(decl == 1 || decl == (slick.slideCount-1)*(-1) ) {
+			carousel.addClass('is-prev');
+			console.log('is prev direction');
+			$('.slick-current').prev().addClass('move_left').removeClass('move_right');
+			$('.slick-current').addClass('move_right');
+		} else {
+			carousel.addClass('is-next');
+			console.log('is next direction');
+			$('.slick-current').next().addClass('move_right').removeClass('move_left');
+			$('.slick-current').addClass('move_left');
+		}
+		var current = carousel.find('.slick-slide')[current];
+		var next = carousel.find('.slick-slide')[next];
+		var previous = carousel.find('.slick-slide')[previous];
+		var src = $(current).find('.carousel_image').attr('src');
+		$(next).find('.carousel_slide_overlay').css('background-image', 'url("' + src + '")');
+		if(addAnimationClass) {
+			carousel.addClass('doAnimation');
+			addAnimationClass = false;
+		}
+	});
+
 	// accordion
 	$(".custom_dropdown_menu").children(".custom_drop_menu").hide().removeClass("custom_drop_menu_open");
 	$(".custom_dropdown_menu.custom_drop_menu_active").children(".custom_drop_menu").show().addClass("custom_drop_menu_open");
@@ -662,7 +699,7 @@ $(document).ready(function(){
 	}
 
 	// back to top btn JS
-	$(document).on("scroll", function(){
+	$(document).on("scroll resize", function(){
 		var pixels = $(document).scrollTop();
 		var pageHeight = $(document).height() - $(window).height();
 		var progress = 100 * pixels / pageHeight;
