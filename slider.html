@@ -12,6 +12,12 @@
 			padding: 0;
 			box-sizing: border-box;
 		}
+		.custom_container {
+			margin: auto;
+			max-width: 1300px;
+			width: 100%;
+			padding: 15px;
+		}
 		.slider-image {
 			position: relative;
 			overflow: hidden;
@@ -32,6 +38,7 @@
 		.carousel_slide {
 			overflow: hidden;
 			position: relative;
+			display: block !important;
 		}
 		.carousel_slide_content {
 			position: absolute;
@@ -172,6 +179,97 @@
 		.slick-slider .slick-arrow.slick-prev {
 			right: 78px;
 		}
+		/*tow col section css start*/
+		.tow_col_section {
+			padding-top: 60px;
+		}
+		.tow_col_section .row {
+			display: flex;
+			flex-wrap: wrap;
+			flex-direction: row-reverse;
+		}
+		.tow_col_section .row .text_col {
+			flex: 0 0 50%;
+			max-width: 50%;
+			display: flex;
+			align-items: center;
+		}
+		.tow_col_section .row .image_col {
+			flex: 0 0 50%;
+			max-width: 50%;
+			display: flex;
+		}
+		.tow_col_section .row .text_col .content {
+			max-width: 650px;
+			margin-left: auto;
+			padding: 15px 40px 15px 15px;
+		}
+		.tow_col_section .row .image_col .contnet_image {
+			position: relative;
+			padding-top: 72%;
+			overflow: hidden;
+			width: 100%;
+		}
+		.tow_col_section .row .image_col .contnet_image img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			max-width: 100%;
+			max-height: 100%;
+			min-width: 100%;
+			min-height: 100%;
+			object-fit: cover;
+		}
+		.tow_col_section .row .text_col .content h1 {
+			font-size: 34px;
+			margin-bottom: 8px;
+		}
+		/*tow col section css end*/
+		/*slider second section css start*/
+		.slider_second_section {
+			overflow: hidden;
+			padding: 60px 0;
+		}
+		.slider_second_section .image_slider {
+			width: 100%;
+			max-width: 500px;
+			-webkit-clip-path: inset(-100vw -100vw -100vw 0);
+			clip-path: inset(-100vw -100vw -100vw 0);
+		}
+		.slider_second_section .slick-list {
+			overflow: visible;
+		}
+		.slider_second_section .image_slider .slider_images {
+			position: relative;
+			padding-top: 80%;
+			overflow: hidden;
+		}
+		.slider_second_section .image_slider .slider_images img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			max-width: 100%;
+			max-height: 100%;
+			min-width: 100%;
+			min-height: 100%;
+			object-fit: cover;
+		}
+		/*slider second section css end*/
+		@media (max-width: 767px) {
+			.tow_col_section .row .image_col,
+			.tow_col_section .row .text_col {
+				flex: 0 0 100%;
+				max-width: 100%;
+			}
+			.tow_col_section .row .text_col .content {
+				max-width: 100%;
+				padding: 20px 20px;
+			}
+		}
 		@media(max-width: 575px) {
 			section.slider_section {
 				height: 100vh;
@@ -210,72 +308,116 @@
 	</style>
 </head>
 <body>
-
+	
 	<section class="slider_section">
 		<div class="carousel">
-			<div>
-				<div class="carousel_slide">
-					<div class="carousel_slide_inner slider-image">
-						<img class="carousel_image" src="images/image1.jpg" alt="Image">
-						<div class="carousel_slide_overlay"></div>
-					</div>
-					<div class="carousel_slide_content">
-						<h1>01</h1>
-					</div>
+			<div class="carousel_slide">
+				<div class="carousel_slide_inner slider-image">
+					<img class="carousel_image" src="images/image1.jpg" alt="Image">
+					<div class="carousel_slide_overlay"></div>
+				</div>
+				<div class="carousel_slide_content">
+					<h1>01</h1>
 				</div>
 			</div>
-			<div>
-				<div class="carousel_slide">
-					<div class="carousel_slide_inner slider-image">
-						<img class="carousel_image" src="images/image2.jpg" alt="Image">
-						<div class="carousel_slide_overlay"></div>
-					</div>
-					<div class="carousel_slide_content">
-						<h1>02</h1>
-					</div>
+			<div class="carousel_slide">
+				<div class="carousel_slide_inner slider-image">
+					<img class="carousel_image" src="images/image2.jpg" alt="Image">
+					<div class="carousel_slide_overlay"></div>
+				</div>
+				<div class="carousel_slide_content">
+					<h1>02</h1>
 				</div>
 			</div>
-			<div>
-				<div class="carousel_slide">
-					<div class="carousel_slide_inner slider-image">
-						<img class="carousel_image" src="images/image3.jpg" alt="Image">
-						<div class="carousel_slide_overlay"></div>
-					</div>
-					<div class="carousel_slide_content">
-						<h1>03</h1>
-					</div>
+			<div class="carousel_slide">
+				<div class="carousel_slide_inner slider-image">
+					<img class="carousel_image" src="images/image3.jpg" alt="Image">
+					<div class="carousel_slide_overlay"></div>
+				</div>
+				<div class="carousel_slide_content">
+					<h1>03</h1>
 				</div>
 			</div>
-			<div>
-				<div class="carousel_slide">
-					<div class="carousel_slide_inner slider-image">
-						<img class="carousel_image" src="images/image4.jpg" alt="Image">
-						<div class="carousel_slide_overlay"></div>
-					</div>
-					<div class="carousel_slide_content">
-						<h1>04</h1>
-					</div>
+			<div class="carousel_slide">
+				<div class="carousel_slide_inner slider-image">
+					<img class="carousel_image" src="images/image4.jpg" alt="Image">
+					<div class="carousel_slide_overlay"></div>
+				</div>
+				<div class="carousel_slide_content">
+					<h1>04</h1>
 				</div>
 			</div>
-			<div>
-				<div class="carousel_slide">
-					<div class="carousel_slide_inner slider-image">
-						<img class="carousel_image" src="images/image5.jpg" alt="Image">
-						<div class="carousel_slide_overlay"></div>
-					</div>
-					<div class="carousel_slide_content">
-						<h1>05</h1>
-					</div>
+			<div class="carousel_slide">
+				<div class="carousel_slide_inner slider-image">
+					<img class="carousel_image" src="images/image5.jpg" alt="Image">
+					<div class="carousel_slide_overlay"></div>
+				</div>
+				<div class="carousel_slide_content">
+					<h1>05</h1>
 				</div>
 			</div>
-			<div>
-				<div class="carousel_slide">
-					<div class="carousel_slide_inner slider-image">
-						<img class="carousel_image" src="images/image6.jpg" alt="Image">
-						<div class="carousel_slide_overlay"></div>
+			<div class="carousel_slide">
+				<div class="carousel_slide_inner slider-image">
+					<img class="carousel_image" src="images/image6.jpg" alt="Image">
+					<div class="carousel_slide_overlay"></div>
+				</div>
+				<div class="carousel_slide_content">
+					<h1>06</h1>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="tow_col_section">
+		<div class="row">
+			<div class="image_col">
+				<div class="contnet_image">
+					<img src="images/image1.jpg" alt="Image">
+				</div>
+			</div>
+			<div class="text_col">
+				<div class="content">
+					<h1>Lorem ipsum dolor sit amet, consectetur</h1>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="slider_second_section">
+		<div class="custom_container">
+			<div class="image_slider">
+				<div>
+					<div class="slider_images">
+						<img src="images/image1.jpg" alt="Image">
 					</div>
-					<div class="carousel_slide_content">
-						<h1>06</h1>
+				</div>
+				<div>
+					<div class="slider_images">
+						<img src="images/image2.jfif" alt="Image">
+					</div>
+				</div>
+				<div>
+					<div class="slider_images">
+						<img src="images/image2.jpg" alt="Image">
+					</div>
+				</div>
+				<div>
+					<div class="slider_images">
+						<img src="images/image3.jpg" alt="Image">
+					</div>
+				</div>
+				<div>
+					<div class="slider_images">
+						<img src="images/image4.jpg" alt="Image">
+					</div>
+				</div>
+				<div>
+					<div class="slider_images">
+						<img src="images/image5.jpg" alt="Image">
+					</div>
+				</div>
+				<div>
+					<div class="slider_images">
+						<img src="images/image6.jpg" alt="Image">
 					</div>
 				</div>
 			</div>
@@ -337,6 +479,17 @@
 			// 		$('.slick-current').addClass('move_left_content');
 			// 	}
 			// });
+
+			// Image Slider JS
+			$('.image_slider').slick({
+				dots: false,
+				infinite: false,
+				arrows: false,
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				autoplay: true,
+				autoplaySpeed: 2000,
+			});
 		});
 	</script>
 </body>

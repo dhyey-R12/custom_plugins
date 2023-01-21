@@ -626,8 +626,9 @@ img{
 	object-fit: cover;
 }
 .carousel_slide {
-	overflow: hidden;
-	position: relative;
+    overflow: hidden;
+    position: relative;
+    display: block !important;
 }
 .carousel_slide_content {
 	position: absolute;
@@ -770,6 +771,9 @@ img{
 }
 /*slider aniamtion css end*/
 /*tow col section css start*/
+.tow_col_section {
+	padding-top: 40px;
+}
 .tow_col_section .row {
     display: flex;
     flex-wrap: wrap;
@@ -814,6 +818,37 @@ img{
     margin-bottom: 8px;
 }
 /*tow col section css end*/
+/*slider second section css start*/
+.slider_second_section {
+	overflow: hidden;
+}
+.slider_second_section .image_slider {
+    width: 100%;
+    max-width: 500px;
+    -webkit-clip-path: inset(-100vw -100vw -100vw 0);
+    clip-path: inset(-100vw -100vw -100vw 0);
+}
+.slider_second_section .slick-list {
+    overflow: visible;
+}
+.slider_second_section .image_slider .slider_images {
+	position: relative;
+	padding-top: 80%;
+	overflow: hidden;
+}
+.slider_second_section .image_slider .slider_images img {
+	position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    max-width: 100%;
+    max-height: 100%;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+}
+/*slider second section css end*/
 @media (max-width: 767px) {
 	.custom_tabs .custom_tabs_heading_btns li a {
 		margin-bottom: 10px !important;

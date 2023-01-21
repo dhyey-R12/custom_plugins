@@ -36,6 +36,18 @@ $(document).ready(function(){
 		}
 	});
 
+	// Image Slider JS
+	$('.image_slider').slick({
+		dots: false,
+		infinite: true,
+		arrows: false,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		autoplay: true,
+		autoplaySpeed: 2000,
+		cssEase: 'ease-in-out'
+	});
+
 	// accordion
 	$(".custom_dropdown_menu").children(".custom_drop_menu").hide().removeClass("custom_drop_menu_open");
 	$(".custom_dropdown_menu.custom_drop_menu_active").children(".custom_drop_menu").show().addClass("custom_drop_menu_open");
