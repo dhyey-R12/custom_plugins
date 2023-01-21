@@ -366,12 +366,13 @@ img{
 
 /*back to top btn css start*/
 .back_to_top_btn {
-	position: fixed;
-	right: 20px;
-	bottom: 10px;
-	cursor: pointer;
-	background-color: #fff;
-	border-radius: 50%;
+    position: fixed;
+    right: 20px;
+    bottom: 10px;
+    cursor: pointer;
+    background-color: #fff;
+    border-radius: 50%;
+    z-index: 999;
 }
 .percent {
 	border-radius: 50%;
