@@ -1,3 +1,19 @@
+$(window).on("load", function() {
+	jQuery(".image_slider img").each(function() {
+		var i = jQuery(this)
+		, n = i.attr("id")
+		, o = i.attr("class")
+		, e = i.attr("src");
+		jQuery.get(e, function(e) {
+			var t = jQuery(e).find("svg");
+			void 0 !== n && (t = t.attr("id", n)),
+			void 0 !== o && (t = t.attr("class", o + " replaced-svg")),
+			!(t = t.removeAttr("xmlns:a")).attr("viewBox") && t.attr("height") && t.attr("width") && t.attr("viewBox", "0 0 " + t.attr("height") + " " + t.attr("width")),
+			i.replaceWith(t)
+		}, "xml")
+	});
+})
+
 $(document).ready(function(){
 
 	// Slider JS
@@ -209,16 +225,16 @@ $(document).ready(function(){
 		var z_index = -1000;
 
 		var effectNames = [
-		"squareFlash",      
-		"vortex",           
-		"bouncingBalls",    
-		"shootingLines",    
-		"simpleGradient",   
-		"starfield",        
-		"layeredTriangles", 
-		"cornerSpikes",     
-		"floatingBoxes"
-		];
+			"squareFlash",      
+			"vortex",           
+			"bouncingBalls",    
+			"shootingLines",    
+			"simpleGradient",   
+			"starfield",        
+			"layeredTriangles", 
+			"cornerSpikes",     
+			"floatingBoxes"
+			];
 
 		// Theme defaults
 		var defaults = {
@@ -577,11 +593,11 @@ $(document).ready(function(){
 
 		// Effects
 		switch (theme) {
-			case "squareFlash":
+		case "squareFlash":
 			squareFlashEffect();
 			break;
 
-			case "vortex":
+		case "vortex":
 
 			var dx = 2;
 			var dy = 4;
@@ -592,7 +608,7 @@ $(document).ready(function(){
 
 			break;
 
-			case "bouncingBalls":
+		case "bouncingBalls":
 			circleData = [];
 
 			for (var i = 0; i < effectAttrs.bounceBallCount; i++) {
@@ -619,11 +635,11 @@ $(document).ready(function(){
 
 			break;
 
-			case "shootingLines":
+		case "shootingLines":
 			shootingLinesEffect();
 			break;
 
-			case "simpleGradient":
+		case "simpleGradient":
 
 			var gradient = ctx.createLinearGradient(0, 0, $limitX / 2, $limitY);
 			gradient.addColorStop(0, effectAttrs.primary);
@@ -634,7 +650,7 @@ $(document).ready(function(){
 
 			break;
 
-			case "starfield":
+		case "starfield":
 
 			var starData = [];
 
@@ -648,7 +664,7 @@ $(document).ready(function(){
 			starfieldEffect();
 			break;
 
-			case "layeredTriangles":
+		case "layeredTriangles":
 
 			ctx.fillStyle = effectAttrs.backgroundCol;
 			ctx.fillRect(0, 0, $limitX, $limitY);
@@ -673,7 +689,7 @@ $(document).ready(function(){
 
 			break;
 
-			case "cornerSpikes":
+		case "cornerSpikes":
 
 			ctx.fillStyle = effectAttrs.backgroundCol;
 			ctx.fillRect(0, 0, $limitX, $limitY);
@@ -682,7 +698,7 @@ $(document).ready(function(){
 
 			break;
 
-			case "floatingBoxes":
+		case "floatingBoxes":
 
 			var squareData = [];
 
