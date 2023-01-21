@@ -836,7 +836,7 @@ img{
 	padding-top: 80%;
 	overflow: hidden;
 }
-.slider_second_section .image_slider .slider_images img {
+.slider_second_section .image_slider .slider_images > * {
 	position: absolute;
     top: 0;
     left: 0;
