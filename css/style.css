@@ -639,15 +639,24 @@ img{
 	color: #fff;
 }
 .carousel_slide_content h1 {
-	font-size: 130px;
-	line-height: 1;
+    font-size: 130px;
+    line-height: 1;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s cubic-bezier(0.7, 0, 0.3, 1) 0s;
+}
+.slick-slide.slick-active .carousel_slide_content h1 {
+    opacity: 1;
+    transform: translateY(0px);
+    transition: all 1s cubic-bezier(0.7, 0, 0.3, 1) 0.7s;
 }
 .slick-active.move_right .carousel_slide_content h1 {
-	animation: backInRight 1s cubic-bezier(0.7, 0, 0.3, 1) 0.7s both;
+	/*animation: backInRight 1s cubic-bezier(0.7, 0, 0.3, 1) 0.7s both;*/
 }
 .slick-active.move_left .carousel_slide_content h1 {
-	animation: backInLeft 0.875s cubic-bezier(0.7, 0, 0.3, 1) 0.7s both;
+	/*animation: backInLeft 0.875s cubic-bezier(0.7, 0, 0.3, 1) 0.7s both;*/
 }
+.slick-slide.slick-active .carousel_slide_content h1 {}
 .carousel_slide_overlay {
 	background-color: transparent;
 	background-size: cover;
@@ -850,6 +859,14 @@ img{
     object-fit: cover;
 }
 /*slider second section css end*/
+/*WebGl canvas section css start*/
+canvas.webgl {
+	width: 100%;
+	height: 100vh;
+	display: block;
+	cursor: none;
+}
+/*WebGl canvas section css end*/
 @media (max-width: 767px) {
 	.custom_tabs .custom_tabs_heading_btns li a {
 		margin-bottom: 10px !important;
