@@ -1,19 +1,19 @@
-$(window).on("load", function() {
-	jQuery(".image_slider img").each(function() {
-		var i = jQuery(this)
-		, n = i.attr("id")
-		, o = i.attr("class")
-		, e = i.attr("src");
-		jQuery.get(e, function(e) {
-			var t = jQuery(e).find("svg");
-			void 0 !== n && (t = t.attr("id", n)),
-			void 0 !== o && (t = t.attr("class", o + " replaced-svg")),
-			!(t = t.removeAttr("xmlns:a")).attr("viewBox") && t.attr("height") && t.attr("width") && t.attr("viewBox", "0 0 " + t.attr("height") + " " + t.attr("width")),
-			i.replaceWith(t)
-		}, "xml")
-		$(this).addClass("done");
-	});
-})
+// $(window).on("load", function() {
+// 	jQuery(".image_slider img").each(function() {
+// 		var i = jQuery(this)
+// 		, n = i.attr("id")
+// 		, o = i.attr("class")
+// 		, e = i.attr("src");
+// 		jQuery.get(e, function(e) {
+// 			var t = jQuery(e).find("svg");
+// 			void 0 !== n && (t = t.attr("id", n)),
+// 			void 0 !== o && (t = t.attr("class", o + " replaced-svg")),
+// 			!(t = t.removeAttr("xmlns:a")).attr("viewBox") && t.attr("height") && t.attr("width") && t.attr("viewBox", "0 0 " + t.attr("height") + " " + t.attr("width")),
+// 			i.replaceWith(t)
+// 		}, "xml")
+// 		$(this).addClass("done");
+// 	});
+// })
 
 $(document).ready(function(){
 
@@ -1478,8 +1478,8 @@ canvas.addEventListener('touchmove', (e) => {
 	}
 }, false);
 
-		// canvas.addEventListener('mousedown', () => {
-		// canvas.addEventListener('mousemove', () => {
+// canvas.addEventListener('mousedown', () => {
+// canvas.addEventListener('mousemove', () => {
 canvas.addEventListener('mouseover', () => {
 	pointers[0].down = true;
 	pointers[0].color = [Math.random() + 0.2, Math.random() + 0.2, Math.random() + 0.2];
@@ -1510,4 +1510,4 @@ window.addEventListener('touchend', (e) => {
 		for (let j = 0; j < pointers.length; j++)
 			if (touches[i].identifier == pointers[j].id)
 				pointers[j].down = false;
-		});
+});
